@@ -99,7 +99,7 @@ while True:
             if event.key == pygame.K_UP:
                 dy = -1
             if event.key == pygame.K_DOWN:
-                dy = 1
+                dy = 2
             if event.key == pygame.K_SPACE:
                 if copokazuje != 'rozgrywka':
                     gracz = Helikopter(200,300)
@@ -113,7 +113,7 @@ while True:
         screen.blit(grafika, (420, 180))
     elif copokazuje == 'rozgrywka':
         for p in przeszkody:
-            p.ruch(2)
+            p.ruch(3)
             p.rysuj()
             if p.kolizja(gracz.ksztalt):
                 copokazuje = 'koniec'
