@@ -10,25 +10,25 @@ screen = pygame.display.set_mode((szer, wys))
 
 def napisz(tekst, rozmiar):
     font = pygame.font.SysFont('Arial', rozmiar)
-    rend = font.render(tekst, 1, (255, 0, 0))
+    rend = font.render(tekst, True, (255, 0, 0))
     screen.blit(rend, (400, 280))
 
 
 def napis(tekst, rozmiar):
     font = pygame.font.SysFont('Arial', rozmiar)
-    rend = font.render(tekst, 1, (255, 0, 0))
+    rend = font.render(tekst, True, (255, 0, 0))
     screen.blit(rend, (520, 400))
 
 
 def napi(tekst, rozmiar):
     font = pygame.font.SysFont('Arial', rozmiar)
-    rend = font.render(tekst, 1, (255, 0, 0))
+    rend = font.render(tekst, True, (255, 0, 0))
     screen.blit(rend, (400, 230))
 
 
 def pkt(tekst, rozmiar):
     font = pygame.font.SysFont('Arial', rozmiar)
-    rend = font.render(tekst, 1, (255, 0, 0))
+    rend = font.render(tekst, True, (255, 0, 0))
     screen.blit(rend, (20, 20))
 
 
@@ -98,9 +98,9 @@ while True:
             quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                dy = -1
+                dy = -0.5
             if event.key == pygame.K_DOWN:
-                dy = 2
+                dy = 1
             if event.key == pygame.K_SPACE:
                 if copokazuje != 'rozgrywka':
                     gracz = Helikopter(200, 300)
@@ -114,7 +114,7 @@ while True:
         screen.blit(grafika, (420, 180))
     elif copokazuje == 'rozgrywka':
         for p in przeszkody:
-            p.ruch(3)
+            p.ruch(1)
             p.rysuj()
             if p.kolizja(gracz.ksztalt):
                 copokazuje = 'koniec'
